@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: qinglong
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    disk:
+      name: qinglong-data
+      mountPath: /ql/data
+      sizeGB: 1
+    envVars:
+      - key: TZ
+        value: Asia/Shanghai
+    healthCheckPath: /
